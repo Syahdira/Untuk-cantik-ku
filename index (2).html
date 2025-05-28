@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Maaf, Flora ❤️ dari Syahdira</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #4b2e2e;
+    padding: 20px;
+    text-align: center;
+  }
+  .container {
+    background-color: rgba(255, 245, 245, 0.9);
+    max-width: 600px;
+    margin: auto;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(255, 192, 203, 0.7);
+  }
+  h1 {
+    font-family: 'Brush Script MT', cursive;
+    color: #b03060;
+    margin-bottom: 10px;
+  }
+  #message {
+    text-align: left;
+    white-space: pre-line;
+    line-height: 1.5;
+    font-size: 16px;
+    min-height: 380px;
+  }
+  .buttons {
+    margin-top: 25px;
+    position: relative;
+    height: 50px;
+    display: none;
+  }
+  button {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    background-color: #b03060;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    position: absolute;
+    top: 0;
+  }
+  button:hover {
+    background-color: #d94f7c;
+  }
+  #btnMaafin {
+    left: 20px;
+    position: static;
+  }
+  #btnNggak {
+    background-color: #777;
+    left: 320px;
+  }
+  #thankYouMessage {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #b03060;
+    font-weight: bold;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Untuk Flora, Sayangku ❤️</h1>
+  <p id="message"></p>
+
+  <div class="buttons" id="buttonArea">
+    <button id="btnMaafin">Maafin</button>
+    <button id="btnNggak">Nggak Mau Maafin</button>
+  </div>
+  <div id="thankYouMessage">Terima kasih sudah memaafkan, sayangku 💖</div>
+</div>
+
+<audio id="musik" src="musik.mp3" autoplay></audio>
+
+<script>
+  const fullText = `Sayang, aku minta maaf dari lubuk hati yang paling dalam…
+Aku nggak tahu harus mulai dari mana, tapi yang jelas aku sadar banget kalau tadi aku bikin kamu kecewa… lebih dari sekadar kecewa, bahkan sampai nangis. Dan itu semua karena salahku—karena ucapan yang nggak aku pikirin baik-baik, yang akhirnya bikin kamu ngerasa kayak kamu cuma seseorang yang ‘biasa’ dalam hidup aku.
+
+Waktu aku bilang “pulang sama adek” ke orang, jujur, aku nggak pernah punya niat buat ngecilin arti kamu di hidupku. Kata “adek” itu sering aku pake sebagai panggilan sayang—buat kamu. Tapi aku juga sadar, nggak semua orang ngerti maksud di balik kata itu. Dan yang paling bikin aku nyesel, aku nggak langsung ngejelasin hal itu ke kamu, sampai kamu keburu salah paham dan ngerasa kayak kamu cuma dianggap adek, bukan pacarku… bukan seseorang yang benar-benar aku jaga dan aku banggakan.
+
+Aku bisa bayangin rasanya ada di posisi kamu. Rasanya digantung antara “sayang” atau “nggak serius”, antara “dekat” tapi nggak diakui. Dan itu pasti nyakitin. Aku ngerti kenapa kamu ngerasa kayak gitu. Dan aku salah… karena aku yang bikin kamu ragu atas posisi kamu di hati aku.
+
+Tapi, dengerin ini baik-baik ya, sayang… Kamu itu bukan cuma sekadar “adek” dalam ucapan. Kamu itu segalanya buat aku. Kamu tempat aku pulang, tempat aku cerita, tempat aku nemuin ketenangan yang nggak pernah aku temuin di orang lain. Kamu yang selalu ada buat aku, yang sabar sama keras kepalaku, yang ngerti meskipun aku nggak banyak ngomong.
+
+Kalau ada hal yang paling aku takutin sekarang, itu bukan kemarahan kamu. Tapi kehilangan kamu karena kesalahanku sendiri.
+
+Aku sadar, hubungan itu bukan cuma tentang cinta, tapi juga tentang rasa aman, penghargaan, dan pengakuan. Dan aku gagal nunjukin itu hari ini. Tapi aku nggak mau gagal terus-terusan. Aku pengen benerin semuanya.
+
+Aku pengen kamu tahu, aku serius. Bukan cuma sebagai pacar, tapi sebagai seseorang yang mau kamu lihat di masa depan, berdiri di samping kamu, dan bilang ke semua orang, “Ini orang yang aku pilih, yang aku jaga, dan yang aku cinta sepenuh hati.”
+
+Maaf ya, aku bikin kamu ngerasa kayak kamu nggak cukup penting. Padahal kamu itu sangat penting. Lebih dari apa pun. Aku janji, aku akan lebih hati-hati lagi, lebih terbuka, dan lebih berani nunjukin kalau kamu itu adalah bagian dari hidup aku yang nggak bisa diganti.
+
+Kalau kamu butuh waktu, aku akan tunggu. Tapi aku nggak akan berhenti nunjukin rasa sayangku ke kamu. Aku bakal terus buktiin, bahwa kamu bukan sekadar “adek” di mata orang lain—tapi kamu adalah satu-satunya yang aku cinta, aku jaga, dan aku syukuri setiap hari.
+
+Sekali lagi, maaf ya, sayang…
+Terima kasih karena kamu masih mau dengerin aku.
+Aku sayang kamu. Selalu. 🤍
+Love you more sayang🤍`;
+
+  const messageEl = document.getElementById('message');
+  const buttonArea = document.getElementById('buttonArea');
+  let index = 0;
+
+  function typeWriter() {
+    if (index < fullText.length) {
+      messageEl.textContent += fullText.charAt(index);
+      index++;
+      setTimeout(typeWriter, 40);
+    } else {
+      buttonArea.style.display = 'block';
+    }
+  }
+
+  typeWriter();
+
+  const btnNggak = document.getElementById('btnNggak');
+  const btnMaafin = document.getElementById('btnMaafin');
+  const thankYouMessage = document.getElementById('thankYouMessage');
+  const container = document.querySelector('.container');
+
+  btnNggak.addEventListener('mouseenter', () => {
+    const containerRect = container.getBoundingClientRect();
+    const maxX = containerRect.width - btnNggak.offsetWidth - 20;
+    const maxY = btnNggak.parentElement.offsetHeight - btnNggak.offsetHeight;
+
+    const randX = Math.floor(Math.random() * maxX);
+    const randY = Math.floor(Math.random() * maxY);
+
+    btnNggak.style.position = 'absolute';
+    btnNggak.style.left = randX + 'px';
+    btnNggak.style.top = randY + 'px';
+  });
+
+  btnMaafin.addEventListener('click', () => {
+    thankYouMessage.style.display = 'block';
+    btnMaafin.disabled = true;
+    btnNggak.disabled = true;
+  });
+</script>
+
+</body>
+</html>
+
+++;
+    setTimeout(typeWriter, 40);
+  } else {
+    document.getElementById('buttonArea').style.display = 'flex';
+    messageEl.style.filter = 'blur(2px)';
+  }
+}
+
+const btnNggak = document.getElementById('btnNggak');
+const btnMaafin = document.getElementById('btnMaafin');
+const thankYouMessage = document.getElementById('thankYouMessage');
+const gifContainer = document.getElementById('gifContainer');
+
+btnNggak.addEventListener('mouseenter', () => {
+  const maxX = window.innerWidth - btnNggak.offsetWidth;
+  const maxY = window.innerHeight - btnNggak.offsetHeight;
+  const randX = Math.floor(Math.random() * maxX);
+  const randY = Math.floor(Math.random() * maxY);
+  btnNggak.style.position = "absolute";
+  btnNggak.style.left = randX + 'px';
+  btnNggak.style.top = randY + 'px';
+});
+
+btnMaafin.addEventListener('click', () => {
+  thankYouMessage.style.display = 'block';
+  gifContainer.style.display = 'block';
+  btnMaafin.disabled = true;
+  btnNggak.disabled = true;
+});
+
+// Efek hujan sangat deras (500 tetes)
+const rainContainer = document.createElement('div');
+rainContainer.classList.add('rain');
+document.body.appendChild(rainContainer);
+
+for (let i = 0; i < 500; i++) {
+  const drop = document.createElement('div');
+  drop.classList.add('drop');
+  drop.style.left = Math.random() * 100 + 'vw';
+  drop.style.animationDuration = 0.3 + Math.random() * 0.5 + 's';
+  drop.style.opacity = Math.random();
+  rainContainer.appendChild(drop);
+}
+</script>
+
+</body>
+</html>
